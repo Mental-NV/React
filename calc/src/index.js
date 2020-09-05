@@ -83,26 +83,26 @@ function Display(props) {
 
 function Keyboard(props) {
     return (
-        <div className="keyborad">
-            <div className="row-1">
+        <div className="keyboard">
+            <div className="row">
                 <button onClick={() => props.onClick(props.buttons[0])}>{props.buttons[0]}</button>
                 <button onClick={() => props.onClick(props.buttons[1])}>{props.buttons[1]}</button>
                 <button onClick={() => props.onClick(props.buttons[2])}>{props.buttons[2]}</button>
                 <button onClick={() => props.onClick(props.buttons[3])}>{props.buttons[3]}</button>
             </div>
-                <div className="row-2">
+                <div className="row">
                 <button onClick={() => props.onClick(props.buttons[4])}>{props.buttons[4]}</button>
                 <button onClick={() => props.onClick(props.buttons[5])}>{props.buttons[5]}</button>
                 <button onClick={() => props.onClick(props.buttons[6])}>{props.buttons[6]}</button>
                 <button onClick={() => props.onClick(props.buttons[7])}>{props.buttons[7]}</button>
             </div>
-            <div className="row-3">
+            <div className="row">
                 <button onClick={() => props.onClick(props.buttons[8])}>{props.buttons[8]}</button>
                 <button onClick={() => props.onClick(props.buttons[9])}>{props.buttons[9]}</button>
                 <button onClick={() => props.onClick(props.buttons[10])}>{props.buttons[10]}</button>
                 <button onClick={() => props.onClick(props.buttons[11])}>{props.buttons[11]}</button>
             </div>
-            <div className="row-4">
+            <div className="row">
                 <button onClick={() => props.onClick(props.buttons[12])}>{props.buttons[12]}</button>
                 <button onClick={() => props.onClick(props.buttons[13])}>{props.buttons[13]}</button>
                 <button onClick={() => props.onClick(props.buttons[14])}>{props.buttons[14]}</button>
