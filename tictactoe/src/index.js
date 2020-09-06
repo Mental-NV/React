@@ -26,24 +26,30 @@ class Board extends React.Component {
     render() {
       return (
         <div>
-          <div className="board-row">
-            {this.renderSquare(0)}
-            {this.renderSquare(1)}
-            {this.renderSquare(2)}
-          </div>
-          <div className="board-row">
-            {this.renderSquare(3)}
-            {this.renderSquare(4)}
-            {this.renderSquare(5)}
-          </div>
-          <div className="board-row">
-            {this.renderSquare(6)}
-            {this.renderSquare(7)}
-            {this.renderSquare(8)}
-          </div>
+          {[0, 1, 2].map(i => {
+            return (
+              <BoardRow>
+                {[0, 1, 2].map(j => {
+                  return (
+                    <Square
+                      value={this.props.squares[3 * i + j]} 
+                      onClick={() => this.props.onClick(3 * i + j)} 
+                    />);
+                })}
+              </BoardRow>
+            );
+          })}
         </div>
       );
     }
+  }
+
+  function BoardRow(props) {
+    return (
+      <div className="board-row">
+        {props.children}
+      </div>
+    );
   }
   
   class Game extends React.Component {
