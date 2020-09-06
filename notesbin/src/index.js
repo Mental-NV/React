@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './index.css';
 
 import NavBar from './components/navbar';
@@ -12,9 +13,17 @@ function App(props) {
     return (
         <div>
             <NavBar />
-            <ViewNotes />
-            <CreateNotes />
-            <ListNotes />
+            <div>
+                <Router>
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Switch>
+                            <Route exact path="/" component={ListNotes} />
+                            <Route path="/view" component={ViewNotes} />
+                            <Route path="/create" component={CreateNotes} />
+                        </Switch>
+                    </Suspense>
+                </Router>
+            </div>
         </div>
     );
 }
