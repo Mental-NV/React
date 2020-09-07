@@ -1,8 +1,9 @@
 import React from 'react';
+import NotesTable from '../components/notestable';
 
 function ListNotes(props) {
     return (
-        <h1>List notes</h1>
+        <NotesTable />
     );
 }
 
