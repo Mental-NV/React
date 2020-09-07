@@ -8,6 +8,7 @@ import NavBar from './components/navbar';
 import CreateNotes from './routes/createnotes';
 import ViewNotes from './routes/viewnotes';
 import ListNotes from './routes/listnotes';
+import NotFound404 from './routes/notfound404'
 
 function App(props) {
     return (
@@ -20,6 +21,7 @@ function App(props) {
                             <Route exact path="/" component={ListNotes} />
                             <Route path="/view" component={ViewNotes} />
                             <Route path="/create" component={CreateNotes} />
+                            <Route exact path='*' component={NotFound404} />
                         </Switch>
                     </Suspense>
                 </Router>
