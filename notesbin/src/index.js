@@ -6,10 +6,10 @@ import './index.css';
 
 import NavBar from './components/navbar';
 
-import CreateNotes from './routes/createnotes';
-import ViewNotes from './routes/viewnotes';
-import ListNotes from './routes/listnotes';
-import NotFound404 from './routes/notfound404'
+const CreateNotes = React.lazy(() => import('./routes/createnotes'));
+const ViewNotes = React.lazy(() => import('./routes/viewnotes'));
+const ListNotes = React.lazy(() => import('./routes/listnotes'));
+const NotFound404 = React.lazy(() => import('./routes/notfound404'));
 
 function App(props) {
     return (
