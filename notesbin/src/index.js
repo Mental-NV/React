@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import './index.css';
 
 import NavBar from './components/navbar';
@@ -16,7 +17,7 @@ function App(props) {
             <NavBar />
             <div>
                 <Router>
-                    <Suspense fallback={<div>Loading...</div>}>
+                    <Suspense fallback={<CircularProgress />}>
                         <Switch>
                             <Route exact path="/" component={ListNotes} />
                             <Route path="/view" component={ViewNotes} />
