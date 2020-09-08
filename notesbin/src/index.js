@@ -14,9 +14,9 @@ const NotFound404 = React.lazy(() => import('./routes/notfound404'));
 function App(props) {
     return (
         <div>
-            <NavBar />
-            <div>
-                <Router>
+            <Router>
+                <NavBar />
+                <div>
                     <Suspense fallback={<CircularProgress />}>
                         <Switch>
                             <Route exact path="/" component={ListNotes} />
@@ -25,8 +25,8 @@ function App(props) {
                             <Route exact path='*' component={NotFound404} />
                         </Switch>
                     </Suspense>
-                </Router>
-            </div>
+                </div>
+            </Router>
         </div>
     );
 }
