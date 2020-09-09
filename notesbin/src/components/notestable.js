@@ -12,7 +12,8 @@ function NotesTable(props) {
         return { 
             'id': index, 
             'title': 'title ' + index, 
-            'created': new Date(2020, 8, index + 2).toISOString().split('T')[0] 
+            'created': new Date(2020, 8, index + 2).toISOString().split('T')[0],
+            'content': null
         }; 
     });
     return (

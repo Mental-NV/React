@@ -1,8 +1,10 @@
 import React from 'react';
+import '../components/ViewNotesPanel';
+import ViewNotesPanel from '../components/ViewNotesPanel';
 
 function ViewNotes(props) {
     return (
-        <h1>View notes</h1>
+        <ViewNotesPanel />
     );
 }
 
