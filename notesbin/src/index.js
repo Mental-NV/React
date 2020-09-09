@@ -15,7 +15,6 @@ function App(props) {
     return (
         <Router>
             <NavBar />
-            <div>
                 <Suspense fallback={<CircularProgress />}>
                     <Switch>
                         <Route exact path="/" component={ListNotes} />
@@ -24,7 +23,6 @@ function App(props) {
                         <Route exact path='*' component={NotFound404} />
                     </Switch>
                 </Suspense>
-            </div>
         </Router>
     );
 }
