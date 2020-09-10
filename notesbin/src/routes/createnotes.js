@@ -1,9 +1,10 @@
 import React from 'react';
+import CreateNotesPanel from '../components/CreateNotesPanel';
 
 function CreateNotes(props) {
     return (
         <div>
-            <h1>Create notes</h1>
+            <CreateNotesPanel />
         </div>
     );
 }

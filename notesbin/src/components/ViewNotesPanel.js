@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import { styled } from '@material-ui/core/styles';
 
-const StyledPapel = styled(Paper) ({
+const StyledPaper = styled(Paper) ({
     width: '100%',
     height: '100px',
 });
@@ -21,7 +21,7 @@ function ViewNotesPanel(props) {
             <Typography>Title: {props.title}</Typography>
             <Typography>Created: {props.created}</Typography>
             <Typography>Content:</Typography>
-            <StyledPapel elevation={3}>{props.content}</StyledPapel>
+            <StyledPaper elevation={3}>{props.content}</StyledPaper>
         </div>
     );
 }
