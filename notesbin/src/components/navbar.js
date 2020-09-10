@@ -13,28 +13,30 @@ const NavLink = styled(Link)({
     marginLeft: '10px',
 });
 
+const StyledAppBar = styled(AppBar)({
+    marginBottom: '15px',
+});
+
 const NavBar = () => {
     return (
-        <div>
-            <AppBar position="static">
-                <Toolbar>
-                    <Typography variat="title" color="inherit">
-                        Notesbin
-                    </Typography>
-                    <Typography>
-                        <NavLink component={RouterLink} to="/" >
-                            Notes list
-                        </NavLink>
-                        <NavLink component={RouterLink} to="/create" >
-                            Create notes
-                        </NavLink>
-                        <NavLink component={RouterLink} to="/view" >
-                            View notes
-                        </NavLink>
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-        </div>
+        <StyledAppBar position="static">
+            <Toolbar>
+                <Typography variat="title" color="inherit">
+                    Notesbin
+                </Typography>
+                <Typography>
+                    <NavLink component={RouterLink} to="/" >
+                        Notes list
+                    </NavLink>
+                    <NavLink component={RouterLink} to="/create" >
+                        Create notes
+                    </NavLink>
+                    <NavLink component={RouterLink} to="/view" >
+                        View notes
+                    </NavLink>
+                </Typography>
+            </Toolbar>
+        </StyledAppBar>
     );
 }
 

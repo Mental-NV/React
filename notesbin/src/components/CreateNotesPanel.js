@@ -5,7 +5,6 @@ import Button from '@material-ui/core/Button';
 
 const StyledTextField = styled(TextField) ({
     width: '100%',
-    marginTop: '15px',
 });
 
 function CreateNotesPanel(props) {
