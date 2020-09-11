@@ -12,7 +12,7 @@ function CreateNotes(props) {
                 title={title} 
                 onContentChange={(e) => { setContent(e.target.value); }}
                 onTitleChange={(e) => { setTitle(e.target.value); }}
-                onClick={() => { saveNotes(title, content); alert(title + '\r\n' + content); }} 
+                onClick={() => { saveNotes(title, content); }} 
             />
         </div>
     );

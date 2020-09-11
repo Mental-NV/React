@@ -8,14 +8,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 function NotesTable(props) {
-    let notesList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((value, index) => { 
-        return { 
-            'id': index, 
-            'title': 'title ' + index, 
-            'created': new Date(2020, 8, index + 2).toISOString().split('T')[0],
-            'content': null
-        }; 
-    });
     return (
         <TableContainer component={Paper}>
             <Table>
@@ -26,7 +18,7 @@ function NotesTable(props) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {notesList.map(row => (
+                    {props.notesList.map(row => (
                         <TableRow key={row.id}>
                             <TableCell>{row.title}</TableCell>
                             <TableCell>{row.created}</TableCell>
