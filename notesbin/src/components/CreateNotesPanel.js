@@ -11,11 +11,15 @@ function CreateNotesPanel(props) {
 
     return (
         <div>
-            <StyledTextField multiline label="New notes" variant="outlined" rows={10}>
+            <StyledTextField 
+                multiline label="New notes" variant="outlined" rows={10} 
+                onChange={props.onContentChange}>
                 {props.content}
             </StyledTextField>
-            <TextField label="Title:">{props.title}</TextField>
-            <Button>Create notes</Button>
+            <TextField label="Title:" onChange={props.onTitleChange}>
+                {props.title}
+            </TextField>
+            <Button onClick={props.onClick}>Create notes</Button>
         </div>
     );
 }

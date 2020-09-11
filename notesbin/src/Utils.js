@@ -1,0 +1,18 @@
+export function loadAllNotes() {
+    let json = localStorage.getItem('notes');
+    let allNotes = [];
+    if (json) {
+        allNotes = JSON.parse(json);
+    }
+    return allNotes;
+}
+
+export function saveNotes(content, title) {
+    let allNotes = loadAllNotes();
+    let created = new Date().toISOString();
+    let id = allNotes.length ;
+    let notes = { content, title, created, id };
+    allNotes.push(notes);
+    let json = JSON.stringify(allNotes);
+    localStorage.setItem('notes', json);
+}
