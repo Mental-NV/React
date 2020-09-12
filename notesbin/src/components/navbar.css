@@ -1,0 +1,30 @@
+.nav {
+    margin-bottom: 15px;
+}
+
+.nav .logo {
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.nav .logo img {
+    vertical-align: middle;
+}
+
+.nav .logo span {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.nav .navlink {
+    color: white;
+}
+
+.nav .logo a.logolink:hover {
+    text-decoration: none;
+}
+
+.nav .buttons {
+    margin-left: auto;
+    margin-right: 0px;
+}
