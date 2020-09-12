@@ -30,7 +30,7 @@ function NotesTable(props) {
                                 <TabLink 
                                     to={`/view?id=${row.id}`} 
                                     component={RouterLink}>
-                                    {row.title}
+                                    {row.title || 'No title'}
                                 </TabLink>
                             </TableCell>
                             <TableCell>{row.created}</TableCell>

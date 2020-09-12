@@ -12,10 +12,10 @@ function ViewNotesPanel(props) {
     let notes = props.notes;
     return (
         <div>
-            <Typography>Title: {notes.title}</Typography>
+            <Typography>Title: {notes.title || 'No title'}</Typography>
             <Typography>Created: {notes.created}</Typography>
             <Typography>Content:</Typography>
-            <StyledPaper elevation={3}>{notes.content}</StyledPaper>
+            <StyledPaper elevation={3}>{notes.content || 'No content'}</StyledPaper>
         </div>
     );
 }

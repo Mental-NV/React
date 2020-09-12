@@ -15,6 +15,7 @@ export function saveNotes(content, title) {
     allNotes.push(notes);
     let json = JSON.stringify(allNotes);
     localStorage.setItem('notes', json);
+    return id;
 }
 
 export function getUrlParam(paramName) {
