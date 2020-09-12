@@ -31,9 +31,6 @@ const NavBar = () => {
                     <NavLink component={RouterLink} to="/create" >
                         Create notes
                     </NavLink>
-                    <NavLink component={RouterLink} to="/view" >
-                        View notes
-                    </NavLink>
                 </Typography>
             </Toolbar>
         </StyledAppBar>
