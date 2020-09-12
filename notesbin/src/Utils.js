@@ -16,3 +16,9 @@ export function saveNotes(content, title) {
     let json = JSON.stringify(allNotes);
     localStorage.setItem('notes', json);
 }
+
+export function getUrlParam(paramName) {
+    let url = new URL(document.location.href);
+    var value = url.searchParams.get(paramName);
+    return value;
+}

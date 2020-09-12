@@ -9,19 +9,13 @@ const StyledPaper = styled(Paper) ({
 });
 
 function ViewNotesPanel(props) {
-
-    props = {
-        title: "Sample title",
-        content: "Some content Some content Some content Some content Some content ",
-        created: new Date().toISOString().split('T')[0]
-    }
-
+    let notes = props.notes;
     return (
         <div>
-            <Typography>Title: {props.title}</Typography>
-            <Typography>Created: {props.created}</Typography>
+            <Typography>Title: {notes.title}</Typography>
+            <Typography>Created: {notes.created}</Typography>
             <Typography>Content:</Typography>
-            <StyledPaper elevation={3}>{props.content}</StyledPaper>
+            <StyledPaper elevation={3}>{notes.content}</StyledPaper>
         </div>
     );
 }
