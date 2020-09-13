@@ -8,7 +8,6 @@ const StyledTextField = styled(TextField) ({
 });
 
 function CreateNotesPanel(props) {
-
     return (
         <div>
             <StyledTextField 

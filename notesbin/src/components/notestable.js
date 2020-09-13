@@ -1,21 +1,20 @@
 import React from 'react';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import Link from '@material-ui/core/Link';
 import { Link as RouterLink } from 'react-router-dom';
-import { styled } from '@material-ui/core/styles';
 
-const TabLink = styled(Link)({
+import { Table, TableBody, TableCell, TableContainer, 
+    TableHead, TableRow, Paper, Link, makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles({
+    tableContainer: {
+        height: 'calc(100vh - 95px)',
+    },
 });
 
 function NotesTable(props) {
+    const classes = useStyles();
+
     return (
-        <TableContainer component={Paper}>
+        <TableContainer component={Paper} className={classes.tableContainer}>
             <Table>
                 <TableHead>
                     <TableRow>
@@ -27,11 +26,11 @@ function NotesTable(props) {
                     {props.notesList.map(row => (
                         <TableRow key={row.id}>
                             <TableCell>
-                                <TabLink 
+                                <Link 
                                     to={`/view?id=${row.id}`} 
                                     component={RouterLink}>
                                     {row.title || 'No title'}
-                                </TabLink>
+                                </Link>
                             </TableCell>
                             <TableCell>{row.created}</TableCell>
                         </TableRow>
