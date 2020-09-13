@@ -1,13 +1,13 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import CircularProgress from '@material-ui/core/CircularProgress';
 
 import 'fontsource-roboto';
 import 'fontsource-roboto/500.css';
 import './index.css';
 
 import NavBar from './components/navbar';
+import LoadingPanel from './components/LoadingPanel';
 
 const CreateNotes = React.lazy(() => import('./routes/createnotes'));
 const ViewNotes = React.lazy(() => import('./routes/viewnotes'));
@@ -18,14 +18,16 @@ function App(props) {
     return (
         <Router>
             <NavBar />
-            <Suspense fallback={<CircularProgress />}>
-                <Switch>
-                    <Route exact path="/" component={ListNotes} />
-                    <Route path="/view" component={ViewNotes} />
-                    <Route path="/create" component={CreateNotes} />
-                    <Route exact path='*' component={NotFound404} />
-                </Switch>
-            </Suspense>
+            <div className='container'>
+                <Suspense fallback={<LoadingPanel />}>
+                    <Switch>
+                        <Route exact path="/" component={ListNotes} />
+                        <Route path="/view" component={ViewNotes} />
+                        <Route path="/create" component={CreateNotes} />
+                        <Route exact path='*' component={NotFound404} />
+                    </Switch>
+                </Suspense>
+            </div>
         </Router>
     );
 }

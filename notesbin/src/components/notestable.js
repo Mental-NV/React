@@ -2,19 +2,13 @@ import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { Table, TableBody, TableCell, TableContainer, 
-    TableHead, TableRow, Paper, Link, makeStyles } from '@material-ui/core';
+    TableHead, TableRow, Paper, Link } from '@material-ui/core';
 
-const useStyles = makeStyles({
-    tableContainer: {
-        height: 'calc(100vh - 95px)',
-    },
-});
+import './notestable.css';
 
 function NotesTable(props) {
-    const classes = useStyles();
-
     return (
-        <TableContainer component={Paper} className={classes.tableContainer}>
+        <TableContainer className='notes-table-container' component={Paper}>
             <Table>
                 <TableHead>
                     <TableRow>
