@@ -13,28 +13,26 @@ function CreateNotes(props) {
     }
 
     return (
-        <div>
-            <CreateNotesPanel 
-                content={content} 
-                title={title} 
-                onContentChange={(e) => { setContent(e.target.value); }}
-                onTitleChange={(e) => { setTitle(e.target.value); }}
-                onClick={() => { 
-                    if (!title) {
-                        alert("Title is required");
-                        return;
-                    }
-                    if (!content) {
-                        alert("Content is required");
-                        return;
-                    }
-                    let id = saveNotes(title, content);
-                    if (id) {
-                        setRedirect(`/view?id=${id}`);
-                    }
-                }} 
-            />
-        </div>
+        <CreateNotesPanel 
+            content={content} 
+            title={title} 
+            onContentChange={(e) => { setContent(e.target.value); }}
+            onTitleChange={(e) => { setTitle(e.target.value); }}
+            onClick={() => { 
+                if (!title) {
+                    alert("Title is required");
+                    return;
+                }
+                if (!content) {
+                    alert("Content is required");
+                    return;
+                }
+                let id = saveNotes(title, content);
+                if (id) {
+                    setRedirect(`/view?id=${id}`);
+                }
+            }} 
+        />
     );
 }
 

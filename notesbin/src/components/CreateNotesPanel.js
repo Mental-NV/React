@@ -1,24 +1,28 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import { styled } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-
-const StyledTextField = styled(TextField) ({
-    width: '100%',
-});
+import { TextField, Button } from '@material-ui/core';
+import './CreateNotesPanel.css'
 
 function CreateNotesPanel(props) {
     return (
-        <div>
-            <StyledTextField 
-                multiline label="New notes" variant="outlined" rows={10} 
-                onChange={props.onContentChange}>
-                {props.content}
-            </StyledTextField>
-            <TextField label="Title:" onChange={props.onTitleChange}>
+        <div className='create-notes-container'>
+            <TextField 
+                placeholder="Title"
+                className='new-title'
+                variant='outlined'
+                onChange={props.onTitleChange}>
                 {props.title}
             </TextField>
-            <Button onClick={props.onClick}>Create notes</Button>
+            <TextField 
+                className='new-notes-content'
+                multiline
+                placeholder="New notes" 
+                variant="outlined" 
+                rows={15}
+                fullWidth
+                onChange={props.onContentChange}>
+                {props.content}
+            </TextField>
+            <Button onClick={props.onClick} variant='outlined'>Create</Button>
         </div>
     );
 }
