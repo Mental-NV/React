@@ -18,8 +18,8 @@ function NotesTable(props) {
             <Table>
                 <TableHead>
                     <TableRow>
-                        <TableCell>Title</TableCell>
-                        <TableCell>Created</TableCell>
+                        <TableCell width='60%'>Title</TableCell>
+                        <TableCell width='40%'>Created</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>

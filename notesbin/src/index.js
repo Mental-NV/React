@@ -18,14 +18,14 @@ function App(props) {
     return (
         <Router>
             <NavBar />
-                <Suspense fallback={<CircularProgress />}>
-                    <Switch>
-                        <Route exact path="/" component={ListNotes} />
-                        <Route path="/view" component={ViewNotes} />
-                        <Route path="/create" component={CreateNotes} />
-                        <Route exact path='*' component={NotFound404} />
-                    </Switch>
-                </Suspense>
+            <Suspense fallback={<CircularProgress />}>
+                <Switch>
+                    <Route exact path="/" component={ListNotes} />
+                    <Route path="/view" component={ViewNotes} />
+                    <Route path="/create" component={CreateNotes} />
+                    <Route exact path='*' component={NotFound404} />
+                </Switch>
+            </Suspense>
         </Router>
     );
 }
