@@ -1,21 +1,22 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import { styled } from '@material-ui/core/styles';
+import { Typography, Paper } from '@material-ui/core';
 
-const StyledPaper = styled(Paper) ({
-    width: '100%',
-    height: '100px',
-});
+import 'fontsource-roboto/300.css';
+import './ViewNotesPanel.css';
 
 function ViewNotesPanel(props) {
     let notes = props.notes;
+    let formattedDate = null;
+    if (notes.created) {
+        formattedDate = new Date(notes.created).toLocaleString();
+    }
     return (
-        <div>
-            <Typography>Title: {notes.title || 'No title'}</Typography>
-            <Typography>Created: {notes.created}</Typography>
-            <Typography>Content:</Typography>
-            <StyledPaper elevation={3}>{notes.content || 'No content'}</StyledPaper>
+        <div className='view-notes-container'>
+            <Typography variant='h2'>{notes.title || 'No title'}</Typography>
+            <Paper className='notes-content' elevation={3}>
+                {notes.content || 'No content'}
+            </Paper>
+            <Typography className='notes-created'>The notes created: {formattedDate || 'No date'}</Typography>
         </div>
     );
 }
