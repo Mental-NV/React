@@ -17,18 +17,23 @@ function NotesTable(props) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {props.notesList.map(row => (
-                        <TableRow key={row.id}>
-                            <TableCell>
-                                <Link 
-                                    to={`/view?id=${row.id}`} 
-                                    component={RouterLink}>
-                                    {row.title || 'No title'}
-                                </Link>
-                            </TableCell>
-                            <TableCell>{row.created}</TableCell>
-                        </TableRow>
-                    ))}
+                    {props.notesList.map(row => {
+                        let formattedDate = null;
+                        if (row.created) {
+                            formattedDate = new Date(row.created).toLocaleString();
+                        }
+                        return (
+                            <TableRow key={row.id}>
+                                <TableCell>
+                                    <Link 
+                                        to={`/view?id=${row.id}`} 
+                                        component={RouterLink}>
+                                        {row.title || 'No title'}
+                                    </Link>
+                                </TableCell>
+                                <TableCell>{formattedDate || 'No date'}</TableCell>
+                            </TableRow>
+                    )})}
                 </TableBody>
             </Table>
         </TableContainer>
